@@ -37,7 +37,7 @@
                                         <?php echo $category['category_name']; ?>
                                     </a>
                                 </td>
-                                <td class="fs-sm"><?php echo ($category['category_status']? 'Active' : 'Inactive'); ?></td>
+                                <td class="fs-sm"><?php echo ($category['category_status'] ? 'Active' : 'Inactive'); ?></td>
                                 
                                 <td class="text-center">
                                     <div class="btn-group">
@@ -45,9 +45,12 @@
                                         <a href="<?php echo 'edit-category.php?id='.$category['id']; ?>" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Edit">
                                             <i class="fa fa-fw fa-pencil-alt"></i>
                                         </a>
-                                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
+                                        <a href="#" class="btn btn-sm btn-alt-secondary delete-category" data-id="<?php echo $category['id']; ?>" data-bs-toggle="tooltip" title="Delete">
                                             <i class="fa fa-fw fa-times"></i>
-                                        </button>
+                                        </a>
+                                        <a href="<?php echo 'controllers/categories.php?status=action&id='.$category['id']; ?>" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Update Status">
+                                            <i class="fa fa-fw fa-eye"></i>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
@@ -57,5 +60,26 @@
                 </table>
             </div>
         </div>
-        </div>
+    </div>
 </div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Attach event listeners to delete buttons
+        const deleteButtons = document.querySelectorAll('.delete-category');
+        
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default link behavior
+
+                // Confirm the action
+                const confirmed = confirm("Are you sure you want to delete this category?");
+                if (confirmed) {
+                    const id = this.getAttribute('data-id');
+                    window.location.href = `controllers/categories.php?delete=action&id=${id}`;
+                }
+            });
+        });
+    });
+</script>

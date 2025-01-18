@@ -3,7 +3,7 @@
 include_once 'components/database.php';
 
 
-$title = 'Dashboard';
+$title = 'Add Category';
 
 
 ob_start();

@@ -1,7 +1,7 @@
 <?php
 include_once 'components/database.php';
 
-$title = 'Dashboard';
+$title = 'Edit Category';
 
 $query = "SELECT * FROM categories where id = ". $_GET['id'];
 $result = mysqli_query($connection, $query);
