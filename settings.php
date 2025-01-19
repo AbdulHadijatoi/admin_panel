@@ -1,4 +1,12 @@
 <?php
+
+include_once 'components/database.php';
+
+// Fetch the settings data
+$query = "SELECT * FROM settings LIMIT 1";
+$result = mysqli_query($connection, $query);
+$settings = mysqli_fetch_assoc($result);
+
 $title = 'Dashboard';
 
 

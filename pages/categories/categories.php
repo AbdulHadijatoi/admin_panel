@@ -37,7 +37,9 @@
                                         <?php echo $category['category_name']; ?>
                                     </a>
                                 </td>
-                                <td class="fs-sm"><?php echo ($category['category_status'] ? 'Active' : 'Inactive'); ?></td>
+                                <td class="fs-sm">
+                                    <?php echo $category['category_status'] == 1 ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-secondary">Inactive</span>'; ?>
+                                </td>
                                 
                                 <td class="text-center">
                                     <div class="btn-group">

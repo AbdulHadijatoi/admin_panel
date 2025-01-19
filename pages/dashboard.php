@@ -22,7 +22,7 @@
         <div class="block block-rounded d-flex flex-column">
         <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
             <dl class="mb-0">
-            <dt class="fs-3 fw-bold">32</dt>
+            <dt class="fs-3 fw-bold"><?php echo $categoryCount??0; ?></dt>
             <dd class="fs-sm fw-medium fs-sm fw-medium text-muted mb-0">Categories</dd>
             </dl>
             <div class="item item-rounded-lg bg-body-light">
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="bg-body-light rounded-bottom">
-            <a href="/categories.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
+            <a href="categories.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
             <span>View all Categories</span>
             <i class="fa fa-arrow-alt-circle-right ms-1 opacity-25 fs-base"></i>
             </a>
@@ -44,7 +44,7 @@
         <div class="block block-rounded d-flex flex-column">
         <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
             <dl class="mb-0">
-            <dt class="fs-3 fw-bold">124</dt>
+            <dt class="fs-3 fw-bold"><?php echo $linksCount; ?></dt>
             <dd class="fs-sm fw-medium fs-sm fw-medium text-muted mb-0">Links</dd>
             </dl>
             <div class="item item-rounded-lg bg-body-light">
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="bg-body-light rounded-bottom">
-            <a href="/links.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
+            <a href="links.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
                 <span>View all Links</span>
                 <i class="fa fa-arrow-alt-circle-right ms-1 opacity-25 fs-base"></i>
             </a>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="bg-body-light rounded-bottom">
-            <a href="/settings.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
+            <a href="settings.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
                 <span>Key and Privacy Settings</span>
                 <i class="fa fa-arrow-alt-circle-right ms-1 opacity-25 fs-base"></i>
             </a>
@@ -96,7 +96,7 @@
             </div>
         </div>
         <div class="bg-body-light rounded-bottom">
-            <a href="/apps.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
+            <a href="apps.php" class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" href="javascript:void(0)">
                 <span>Apps and Redirect</span>
                 <i class="fa fa-arrow-alt-circle-right ms-1 opacity-25 fs-base"></i>
             </a>

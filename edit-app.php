@@ -1,16 +1,14 @@
 <?php
 include_once 'components/database.php';
 
-$query = "SELECT * FROM app_config ORDER BY id DESC";
-$result = mysqli_query($connection, $query);
-$apps = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $apps[] = $row;
-}
+$title = 'Edit App';
 
-$title = 'Apps';
+$query = "SELECT * FROM app_config where id = ". $_GET['id'];
+$result = mysqli_query($connection, $query);
+$app = mysqli_fetch_assoc($result);
+
 ob_start();
-include 'pages/apps/apps.php';
+include 'pages/apps/edit-app.php';
 $content = ob_get_clean(); // Store the captured output into $content
 
 

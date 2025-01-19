@@ -39,7 +39,9 @@
                                 <td><?php echo $categoryMap[$link['category_id']] ?? 'Unknown'; ?></td>
                                 <td><?php echo htmlspecialchars($link['channel_description']); ?></td>
                                 <td><?php echo htmlspecialchars($link['channel_type'] ?? 'N/A'); ?></td>
-                                <td><?php echo $link['channel_status'] ? 'Active' : 'Inactive'; ?></td>
+                                <td>
+                                    <?php echo $link['channel_status'] == 1 ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-secondary">Inactive</span>'; ?>
+                                </td>
                                 <td>
                                     <a href="<?php echo htmlspecialchars($link['video_url']); ?>" target="_blank">
                                         View Video

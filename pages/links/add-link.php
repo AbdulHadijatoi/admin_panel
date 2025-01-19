@@ -68,8 +68,8 @@
                     <div class="col-6">
                         <div class="form-floating mb-4">
                             <select class="form-control" id="channel_status" name="channel_status">
-                                <option value="1" <?php echo (isset($category['channel_status']) && $category['channel_status'] == 1) ? 'selected' : ''; ?>>Active</option>
-                                <option value="0" <?php echo (isset($category['channel_status']) && $category['channel_status'] == 0) ? 'selected' : ''; ?>>Inactive</option>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
                             </select>
                             <label for="channel_status">Channel Status</label>
                         </div>

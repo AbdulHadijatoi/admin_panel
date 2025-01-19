@@ -1,143 +1,80 @@
 <!-- Page Content -->
 <div class="content">
+    <!-- Floating Labels -->
     <div class="block block-rounded">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Settings</h3>
-            <div class="block-options">
-            <button type="button" class="btn-block-option">
-                <i class="si si-settings"></i>
-            </button>
-            </div>
+            <h3 class="block-title">Edit Settings</h3>
         </div>
-        <div class="block-content">
-            
-            <div class="table-responsive">
-            <table class="table table-bordered table-striped table-vcenter">
-                <thead>
-                <tr>
-                    <th class="text-center" style="width: 100px;">
-                    <i class="far fa-user"></i>
-                    </th>
-                    <th>Name</th>
-                    <th style="width: 30%;">Email</th>
-                    <th style="width: 15%;">Access</th>
-                    <th class="text-center" style="width: 100px;">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar3.jpg" alt="">
-                    </td>
-                    <td class="fw-semibold fs-sm">
-                    <a href="be_pages_generic_profile.html">Andrea Gardner</a>
-                    </td>
-                    <td class="fs-sm">client1<em class="text-muted">@example.com</em></td>
-                    <td>
-                    <span class="fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-info-light text-info">Business</span>
-                    </td>
-                    <td class="text-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Edit">
-                        <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
-                        <i class="fa fa-fw fa-times"></i>
+        <div class="block-content block-content-full">
+            <form action="controllers/settings.php" method="POST">
+                <div class="row d-flex justify-content-center pt-4 px-4">
+                    
+                    <!-- Hidden Input for ID -->
+                    <input type="hidden" name="id" value="<?php echo $settings['id']; ?>">
+
+                    <!-- Row 1 -->
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="api_key" name="api_key" placeholder="API Key" value="<?php echo $settings['api_key']; ?>">
+                            <label for="api_key">API Key</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="onesignal_app_id" name="onesignal_app_id" placeholder="OneSignal App ID" value="<?php echo $settings['onesignal_app_id']; ?>">
+                            <label for="onesignal_app_id">OneSignal App ID</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="onesignal_rest_api_key" name="onesignal_rest_api_key" placeholder="OneSignal REST API Key" value="<?php echo $settings['onesignal_rest_api_key']; ?>">
+                            <label for="onesignal_rest_api_key">OneSignal REST API Key</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="providers" name="providers" placeholder="Providers" value="<?php echo $settings['providers']; ?>">
+                            <label for="providers">Providers</label>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="protocol_type" name="protocol_type" placeholder="Protocol Type" value="<?php echo $settings['protocol_type']; ?>">
+                            <label for="protocol_type">Protocol Type</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="fcm_notification_topic" name="fcm_notification_topic" placeholder="FCM Notification Topic" value="<?php echo $settings['fcm_notification_topic']; ?>">
+                            <label for="fcm_notification_topic">FCM Notification Topic</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="livechaturl" name="livechaturl" placeholder="Live Chat URL" value="<?php echo $settings['livechaturl']; ?>">
+                            <label for="livechaturl">Live Chat URL</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="chatonoff" name="chatonoff" placeholder="Chat On/Off" value="<?php echo $settings['chatonoff']; ?>">
+                            <label for="chatonoff">Chat On/Off</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Add More Rows Here for Other Fields -->
+
+                    <!-- Save Changes Button -->
+                    <div class="col-12 text-center">
+                        <button type="submit" name="save_settings" class="btn btn-primary mt-4">
+                            Save Changes
                         </button>
                     </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar5.jpg" alt="">
-                    </td>
-                    <td class="fw-semibold fs-sm">
-                    <a href="be_pages_generic_profile.html">Alice Moore</a>
-                    </td>
-                    <td class="fs-sm">client2<em class="text-muted">@example.com</em></td>
-                    <td>
-                    <span class="fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-success-light text-success">VIP</span>
-                    </td>
-                    <td class="text-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Edit">
-                        <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
-                        <i class="fa fa-fw fa-times"></i>
-                        </button>
-                    </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar8.jpg" alt="">
-                    </td>
-                    <td class="fw-semibold fs-sm">
-                    <a href="be_pages_generic_profile.html">Megan Fuller</a>
-                    </td>
-                    <td class="fs-sm">client3<em class="text-muted">@example.com</em></td>
-                    <td>
-                    <span class="fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-danger-light text-danger">Disabled</span>
-                    </td>
-                    <td class="text-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Edit">
-                        <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
-                        <i class="fa fa-fw fa-times"></i>
-                        </button>
-                    </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar8.jpg" alt="">
-                    </td>
-                    <td class="fw-semibold fs-sm">
-                    <a href="be_pages_generic_profile.html">Amber Harvey</a>
-                    </td>
-                    <td class="fs-sm">client4<em class="text-muted">@example.com</em></td>
-                    <td>
-                    <span class="fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-success-light text-success">VIP</span>
-                    </td>
-                    <td class="text-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Edit">
-                        <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
-                        <i class="fa fa-fw fa-times"></i>
-                        </button>
-                    </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar8.jpg" alt="">
-                    </td>
-                    <td class="fw-semibold fs-sm">
-                    <a href="be_pages_generic_profile.html">Danielle Jones</a>
-                    </td>
-                    <td class="fs-sm">client5<em class="text-muted">@example.com</em></td>
-                    <td>
-                    <span class="fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-danger-light text-danger">Disabled</span>
-                    </td>
-                    <td class="text-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Edit">
-                        <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
-                        <i class="fa fa-fw fa-times"></i>
-                        </button>
-                    </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
+                </div>
+            </form>
         </div>
-        </div>
+    </div>
+    <!-- END Floating Labels -->
 </div>
